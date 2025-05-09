@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NRW City Distance</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #6c757d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #343a40;
+        }
+        .cities {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            gap: 10px 30px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 350px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>NRW City Distance</h1>
+
+    <div class="cities">
+        <div>Cologne</div><div>Dortmund</div><div>Düsseldorf</div>
+        <div>Bonn</div><div>Essen</div><div>Bochum</div>
+        <div>Wuppertal</div><div>Bielefeld</div><div>Gelsenkirchen</div>
+    </div>
+
+    <form method="post">
+        <input type="text" name="query" placeholder="Ask something like: Distance between Essen and Bonn">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</body>
+</html>
